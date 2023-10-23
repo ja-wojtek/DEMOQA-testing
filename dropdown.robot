@@ -1,9 +1,8 @@
 *** Settings ***
 Library  SeleniumLibrary
+Resource  resources.robot
 
 *** Variables ***
-${BROWSER}         chrome
-${HOMEPAGE}        https://demoqa.com
 ${LIST}
 
 *** Test Cases ***
@@ -14,11 +13,6 @@ TextBox Tests
     [Teardown]  Close App
 
 *** Keywords ***
-Open App
-    Open Browser          ${HOMEPAGE}      ${BROWSER}
-    Set Window Size       1920            1080
-    Set Window Position   0  0
-
 Go To Dropdown
     Go To                 ${HOMEPAGE}/select-menu      
     ${LIST} =  Get List Items  id:oldSelectMenu
