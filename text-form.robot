@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Resource  resources.robot
 
 *** Variables ***
 ${BROWSER}         chrome
@@ -13,11 +14,6 @@ TextBox Tests
     [Teardown]  Close App
 
 *** Keywords ***
-Open App
-    Open Browser          ${HOMEPAGE}      ${BROWSER}
-    Set Window Size       1920            1080
-    Set Window Position   0  0
-
 Go To Text Box Page
     Click Element         //body/div[@id='app']/div[@class='body-height']/div[@class='home-content']/div[@class='home-body']/div[@class='category-cards']/div[1]
     Click Element         id:item-0
